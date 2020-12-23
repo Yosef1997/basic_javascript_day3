@@ -6,27 +6,30 @@ const name = [
     'Ella', 'Faith', 'Olivia', 'Penelope']
 
 
-function seleksiNama(string, number, callback){
-    const nametoLowerCase = name.map(e.toLowerCase())
-    const newArr = nametoLowerCase.filter((elemen) =>{
-        if(elemen.match(string.toLowerCase())){
-            return elemen
+function seleksiNama(key, range, callback){
+    const nameLowerCase = name.map(value => value.toLowerCase());
+    const newArr = nameLowerCase. filter((items) => {
+        if(items.match(key.toLowerCase())){
+            return items
         }else{
             return undefined
         }
     })
-    callback(newArr, number)
+    callback(newArr, range)
 }
-function range(data, number){
-    if(typeof data == 'null'){
-        console.log('no data')
+function range(element, range){
+    const len = element.length
+    if(element == []){
+        console.log('data not found')
     }else{
-        if(number > data.length){
-            number = data.length
-        }else{
-            console.log(newArr)
+        if(range > len){
+            range = len
         }
+        const result = []
+        for(i = 0; i < range; i++){
+            result.push(element[i])
+        }
+        console.log(result)
     }
 }
-
-seleksiNama('an', 3, range)
+seleksiNama('xx', 10, range)
